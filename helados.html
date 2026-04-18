@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helados Lupita - Menú Oficial</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+
+        :root {
+            --lupita-purple: #7e2b92;
+            --lupita-cyan: #00cccc;
+            --bg-soft: #fcfcfc;
+        }
+
+        body {
+            background-color: var(--bg-soft);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+            border-bottom: 5px solid var(--lupita-purple);
+        }
+
+        .logo-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 4.5rem;
+            color: var(--lupita-cyan);
+            margin: 0;
+        }
+
+        .tagline {
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--lupita-purple);
+            margin-top: 10px;
+        }
+
+        /* --- SECCIÓN PRECIOS --- */
+        .promo-banner {
+            max-width: 850px;
+            margin: -20px auto 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(126, 43, 146, 0.15);
+            padding: 30px;
+            position: relative;
+            z-index: 10;
+            border: 1px solid #eee;
+        }
+
+        .price-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            text-align: center;
+        }
+
+        .price-card {
+            padding: 15px;
+            border-radius: 12px;
+            background: #fdfdfd;
+            border: 1px solid #f0f0f0;
+        }
+
+        .price-card h3 {
+            margin: 0;
+            color: var(--lupita-purple);
+            font-size: 1.4rem;
+        }
+
+        .price-card p {
+            margin: 5px 0 0;
+            font-size: 0.85rem;
+            color: #666;
+            font-weight: 600;
+        }
+
+        .full-width-info {
+            grid-column: span 2;
+            padding: 15px;
+            background: #e0fbfb;
+            border-radius: 10px;
+            font-weight: 700;
+            color: var(--lupita-cyan);
+            font-size: 1rem;
+        }
+
+        /* --- CONTENIDO --- */
+        .container {
+            max-width: 1100px;
+            margin: 0 auto 80px;
+            padding: 0 20px;
+        }
+
+        .category-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3rem;
+            color: var(--lupita-purple);
+            margin: 50px 0 10px;
+            border-bottom: 3px solid var(--lupita-cyan);
+            display: inline-block;
+        }
+
+        .sub-label {
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 0.7rem;
+            letter-spacing: 2px;
+            color: #999;
+            margin: 35px 0 15px;
+            display: block;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 10px;
+        }
+
+        .card {
+            background: white;
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #eee;
+            transition: 0.3s ease;
+            font-weight: 600;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 40px;
+        }
+
+        .card:hover {
+            transform: scale(1.03);
+            border-color: var(--lupita-purple);
+            background: #fdf7ff;
+        }
+
+        .c-agua { border-left: 4px solid var(--lupita-cyan); }
+        .c-leche { border-left: 4px solid var(--lupita-purple); }
+
+    </style>
+</head>
+<body>
+
+<header>
+    <h1 class="logo-title">Helados Lupita</h1>
+    <div class="tagline">Sabor • Pasión • Tradición • Excelencia</div>
+</header>
+
+<div class="container">
+    <div class="promo-banner">
+        <div class="price-grid">
+            <div class="price-card">
+                <h3>° Sencillo $40</h3>
+                <p>Hasta 2 sabores</p>
+            </div>
+            <div class="price-card">
+                <h3>° Doble $70</h3>
+                <p>Hasta 3 sabores</p>
+            </div>
+            <div class="full-width-info">
+                Pueden ir en Vaso, Cono o Dorado
+            </div>
+            <div class="price-card">
+                <h3>° ½ Litro $120</h3>
+                <p>Hasta 2 sabores</p>
+            </div>
+            <div class="price-card">
+                <h3>° 1 Litro $240</h3>
+                <p>Hasta 4 sabores</p>
+            </div>
+            <div class="full-width-info" style="background: #f7ebff; color: var(--lupita-purple);">
+                Incluye algunos conos / dorados gratis en tu compra de medio o litro
+            </div>
+        </div>
+    </div>
+
+    <div class="category-title">Base Agua</div>
+    <div class="grid" id="agua"></div>
+
+    <div class="category-title">Base Leche</div>
+    
+    <span class="sub-label">Chocolatosos</span>
+    <div class="grid" id="choc"></div>
+
+    <span class="sub-label">Frutales</span>
+    <div class="grid" id="frut"></div>
+
+    <span class="sub-label">Cremosos / Quesos</span>
+    <div class="grid" id="crema"></div>
+
+    <span class="sub-label">Semillas</span>
+    <div class="grid" id="semilla"></div>
+
+    <span class="sub-label">Bebidas con Piquete</span>
+    <div class="grid" id="bebida"></div>
+
+    <span class="sub-label">Dulces & Café</span>
+    <div class="grid" id="dulce"></div>
+</div>
+
+<script>
+    const data = {
+        agua: ["Tamarindo", "Limón", "Mango con chile", "Zapote", "Frutos rojos", "Manzana verde", "Maracuyá", "Pica fresa", "Icce de Cereza", "Guanábana"],
+        choc: ["Ferrero", "Chocolate Hershey", "Chocolate Abuelita", "Selva Negra", "Kinder Bueno", "Chocomenta", "Kinder Delice", "Gansito", "Bubulubu", "Chocochips", "Galleta Oreo"],
+        frut: ["Crema de limón", "Crema de naranja", "Crema de piña", "Crema de mandarina", "Crema de fresa", "Crema de higo", "Crema de coco", "Crema de Mango", "Frutas secas", "Crema de Lima", "Frutos del bosque", "Mamey", "Guayaba", "Cereza", "Nanche", "Beso de Ángel"],
+        crema: ["Flor de nata", "Chongos Queso Zamoranos", "Tres leches", "Queso con Zarzamora", "Queso Cotija", "Queso Philadelphia", "Cajeta"],
+        semilla: ["Nuez", "Pistache", "Almendra", "Piñón", "Mazapán"],
+        bebida: ["Baileys", "Ron con pasas", "Amaretto", "Buchanan’s", "Crema de tequila", "Piña colada", "Rompope", "Martell"],
+        dulce: ["Vainilla", "Tiramisú", "Nescafé", "Algodón de azúcar", "Chicle", "Pay de limón"]
+    };
+
+    function draw(list, id, cls) {
+        const target = document.getElementById(id);
+        list.forEach(s => {
+            const d = document.createElement('div');
+            d.className = `card ${cls}`;
+            d.innerText = s;
+            target.appendChild(d);
+        });
+    }
+
+    draw(data.agua, 'agua', 'c-agua');
+    draw(data.choc, 'choc', 'c-leche');
+    draw(data.frut, 'frut', 'c-leche');
+    draw(data.crema, 'crema', 'c-leche');
+    draw(data.semilla, 'semilla', 'c-leche');
+    draw(data.bebida, 'bebida', 'c-leche');
+    draw(data.dulce, 'dulce', 'c-leche');
+</script>
+
+</body>
+</html>

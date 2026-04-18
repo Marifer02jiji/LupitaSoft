@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Helados Lupita - Menú Oficial</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;600;700&display=swap');
+
+        :root {
+            --lupita-purple: #7e2b92;
+            --lupita-cyan: #00cccc;
+            --bg-soft: #fff9ff;
+        }
+
+        body {
+            background-color: var(--bg-soft);
+            font-family: 'Quicksand', sans-serif;
+            margin: 0;
+            color: #444;
+            text-align: center;
+        }
+
+        /* --- HEADER DINÁMICO --- */
+        header {
+            background: white;
+            border-bottom: 5px solid var(--lupita-purple);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 30px 10px;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        header.shrink { padding: 10px 5px; }
+
+        .logo-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.5rem;
+            color: var(--lupita-purple); /* Color morado original */
+            margin: 0;
+            transition: all 0.4s ease;
+        }
+
+        header.shrink .logo-title { font-size: 2rem; }
+
+        .welcome-text {
+            font-size: 1.1rem;
+            color: var(--lupita-cyan);
+            margin-top: 5px;
+            font-weight: 700;
+        }
+
+        header.shrink .welcome-text { display: none; }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .nav-btn {
+            padding: 10px 25px;
+            border: none;
+            border-radius: 25px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            color: white;
+        }
+
+        .btn-helados { background: var(--lupita-purple); }
+        .btn-paletas { background: var(--lupita-cyan); }
+        .nav-btn.active-nav { box-shadow: 0 0 0 3px white, 0 0 0 6px #333; }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto 80px;
+            padding: 0 15px;
+        }
+
+        /* --- PRECIOS CENTRADOS --- */
+        .price-banner {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            padding: 25px;
+            margin: 30px 0;
+            border: 1px solid #eee;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .price-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .price-item h4 { margin: 0; color: var(--lupita-purple); font-size: 1.2rem; }
+        .price-item p { margin: 5px 0; font-size: 1.1rem; font-weight: 800; color: var(--lupita-cyan); }
+
+        .price-note {
+            width: 100%;
+            max-width: 700px;
+            font-size: 0.85rem;
+            color: #666;
+            margin-top: 15px;
+            border-top: 1px dashed #ccc;
+            padding-top: 15px;
+            line-height: 1.6;
+        }
+
+        /* --- SECCIONES --- */
+        .section-content { display: none; }
+        .active-section { display: block; animation: fadeIn 0.5s ease; }
+
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+        .category-title {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: var(--lupita-purple);
+            margin: 40px 0 10px;
+            border-bottom: 2px solid var(--lupita-cyan);
+            display: inline-block;
+        }
+
+        .sub-label {
+            display: block;
+            font-weight: 800;
+            font-size: 0.75rem;
+            color: #aaa;
+            margin: 20px 0 10px;
+            letter-spacing: 2px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .card {
+            background: white;
+            padding: 12px;
+            border-radius: 15px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 45px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .card-agua { border-left: 5px solid var(--lupita-cyan); }
+        .card-leche { border-left: 5px solid var(--lupita-purple); }
+
+    </style>
+</head>
+<body>
+
+<header id="mainHeader">
+    <h1 class="logo-title">Helados Lupita</h1>
+    <p class="welcome-text">¡Bienvenidos!</p>
+    <div class="nav-container">
+        <button id="btn-h" class="nav-btn btn-helados active-nav" onclick="showSection('helados')">🍦 Helados</button>
+        <button id="btn-p" class="nav-btn btn-paletas" onclick="showSection('paletas')">🍭 Paletas</button>
+    </div>
+</header>
+
+<div class="container">
+    
+    <div id="section-helados" class="section-content active-section">
+        <div class="price-banner">
+            <div class="price-grid">
+                <div class="price-item"><h4>Sencillo</h4><p>$40.00</p></div>
+                <div class="price-item"><h4>Doble</h4><p>$70.00</p></div>
+                <div class="price-item"><h4>½ Litro</h4><p>$120.00</p></div>
+                <div class="price-item"><h4>1 Litro</h4><p>$240.00</p></div>
+            </div>
+            <div class="price-note">
+                Sencillo (hasta 2 sabores) / Doble (hasta 3 sabores). <br>
+                Disponibles en Vaso, Cono o Dorado. <br><br>
+                <strong>1/2 Litro:</strong> Máximo 2 sabores, incluye algunos conos o dorados gratis. <br>
+                <strong>1 Litro:</strong> Máximo 4 sabores, incluye algunos conos o dorados gratis.
+            </div>
+        </div>
+
+        <h2 class="category-title">Helados de Agua</h2>
+        <div class="grid" id="h-agua"></div>
+
+        <h2 class="category-title">Helados de Leche</h2>
+        <span class="sub-label">Chocolatosos</span>
+        <div class="grid" id="h-choc"></div>
+        <span class="sub-label">Frutales</span>
+        <div class="grid" id="h-frut"></div>
+        <span class="sub-label">Cremosos y Quesos</span>
+        <div class="grid" id="h-crema"></div>
+        <span class="sub-label">Semillas</span>
+        <div class="grid" id="h-semilla"></div>
+        <span class="sub-label">Bebidas</span>
+        <div class="grid" id="h-bebida"></div>
+        <span class="sub-label">Dulces</span>
+        <div class="grid" id="h-dulce"></div>
+    </div>
+
+    <div id="section-paletas" class="section-content">
+        <div class="price-banner">
+            <div class="price-grid">
+                <div class="price-item">
+                    <h4 style="font-size: 1.3rem;">Precio General</h4>
+                    <p style="font-size: 2rem; margin: 5px 0;">$13.00</p>
+                </div>
+            </div>
+            <div class="price-note">¡Cualquier paleta por el mismo precio!</div>
+        </div>
+
+        <h2 class="category-title">Paletas de Agua</h2>
+        <div class="grid" id="p-agua"></div>
+
+        <h2 class="category-title">Paletas de Leche</h2>
+        <div class="grid" id="p-leche"></div>
+    </div>
+</div>
+
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active-section'));
+        document.getElementById('section-' + sectionId).classList.add('active-section');
+        document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active-nav'));
+        if(sectionId === 'helados') document.getElementById('btn-h').classList.add('active-nav');
+        else document.getElementById('btn-p').classList.add('active-nav');
+        window.scrollTo(0,0);
+    }
+
+    window.onscroll = function() {
+        const h = document.getElementById("mainHeader");
+        if (document.documentElement.scrollTop > 50) h.classList.add("shrink");
+        else h.classList.remove("shrink");
+    };
+
+    const data = {
+        hAgua: ["Tamarindo", "Limón", "Mango con chile", "Zapote", "Frutos rojos", "Manzana verde", "Maracuyá", "Pica fresa", "Icce de Cereza", "Guanábana"],
+        hChoc: ["Ferrero", "Chocolate Hershey", "Chocolate Abuelita", "Selva Negra", "Kinder Bueno", "Chocomenta", "Kinder Delice", "Gansito", "Bubulubu", "Chocochips", "Galleta Oreo"],
+        hFrut: ["Crema de limón", "Crema de naranja", "Crema de piña", "Crema de mandarina", "Crema de fresa", "Crema de higo", "Crema de coco", "Crema de Mango", "Frutas secas", "Crema de Lima", "Frutos del bosque", "Mamey", "Guayaba", "Cereza", "Nanche", "Beso de Ángel"],
+        hCrema: ["Flor de nata", "Chongos Queso Zamoranos", "Tres leches", "Queso con Zarzamora", "Queso Cotija", "Queso Philadelphia", "Cajeta"],
+        hSemilla: ["Nuez", "Pistache", "Almendra", "Piñón", "Mazapán"],
+        hBebida: ["Baileys", "Ron con pasas", "Amaretto", "Buchanan’s", "Crema de tequila", "Piña colada", "Rompope", "Martell"],
+        hDulce: ["Vainilla", "Tiramisú", "Nescafé", "Algodón de azúcar", "Chicle", "Pay de limón"],
+        pAgua: ["Limón", "Tamarindo", "Grosella", "Chicle", "Mango con chile", "Zarzamora"],
+        pLeche: ["Flor de nata", "Mamey", "Pistache", "Chocolate", "Cajeta", "Guayaba", "Fresa", "Vainilla", "Algodón de azúcar", "Galleta oreo", "Queso"]
+    };
+
+    function draw(list, id, card) {
+        const c = document.getElementById(id);
+        list.forEach(item => { c.innerHTML += `<div class="card ${card}">${item}</div>`; });
+    }
+
+    draw(data.hAgua, 'h-agua', 'card-agua');
+    draw(data.hChoc, 'h-choc', 'card-leche');
+    draw(data.hFrut, 'h-frut', 'card-leche');
+    draw(data.hCrema, 'h-crema', 'card-leche');
+    draw(data.hSemilla, 'h-semilla', 'card-leche');
+    draw(data.hBebida, 'h-bebida', 'card-leche');
+    draw(data.hDulce, 'h-dulce', 'card-leche');
+    draw(data.pAgua, 'p-agua', 'card-agua');
+    draw(data.pLeche, 'p-leche', 'card-leche');
+</script>
+</body>
+</html>
