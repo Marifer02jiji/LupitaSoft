@@ -26,7 +26,7 @@ class LupitaSoftApp(tk.Tk):
         super().__init__()
         
         # Configuración de la Ventana Principal
-        self.title("LupitaSoft — Heladería Lupita")
+        self.title("🍧 LupitaSoft — Heladería Lupita")
         self.geometry("1150x700")
         self.configure(bg=FONDO)
         
@@ -110,16 +110,15 @@ class LupitaSoftApp(tk.Tk):
 
         # 2. Diccionario de Títulos (Para actualizar el Topbar de tu diseño original)
         titulos = {
-            "dashboard": "  Dashboard Principal",
-            "inventario": "  Control de Inventario",
-            "ventas": "  Punto de Venta",
-            "sabores": "  Catálogo de los 72 Sabores",
-            "recetas": "  Panel de Producción (Cocina)",
-            "usuarios": "  Gestión de Personal y Accesos",
-            "pedidos": "  Logística de Pedidos (Eventos)"
+            "dashboard": " 🗒️ Dashboard Principal",
+            "inventario": " 📦 Control de Inventario",
+            "ventas": " 🤑 Punto de Venta",
+            "sabores": " 🍨 Catálogo de los 72 Sabores",
+            "recetas": " 🗒️ Panel de Producción (Cocina)",
+            "usuarios": " 👨 Gestión de Personal y Accesos",
+            "pedidos": " 📋 Logística de Pedidos (Eventos)"
         }
 
-        # Actualizar el título en el Topbar
         self.titulo_var.set(titulos.get(seccion, "LupitaSoft"))
 
         # 3. Lógica de Carga de Vistas

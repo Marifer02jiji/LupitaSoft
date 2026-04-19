@@ -25,15 +25,15 @@ class SidebarView(tk.Frame):
         tk.Frame(self, bg=MORADO_MED, height=1).pack(fill="x", padx=20, pady=15)
 
         # 2. SECCIONES GENERALES
-        self._crear_btn("  Dashboard", "dashboard")
-        self._crear_btn("  Inventario", "inventario")
-        self._crear_btn("  Ventas", "ventas")
-        self._crear_btn(" Catálogo", "sabores")
+        self._crear_btn(" 🗒️ Dashboard", "dashboard")
+        self._crear_btn(" 📦 Inventario", "inventario")
+        self._crear_btn(" 🤑 Ventas", "ventas")
+        self._crear_btn(" 📋Catálogo", "sabores")
         # 3. SECCIONES DE GERENCIA (Solo para Admin / HLA01)
         if self.rol == "Admin":
             tk.Label(self, text="GERENCIA", font=("Arial", 7, "bold"), 
                      bg=SIDEBAR_BG, fg=TEXTO_GRIS).pack(anchor="w", padx=20, pady=(15, 0))
-            self._crear_btn("  Usuarios", "usuarios")
+            self._crear_btn(" 👨 Usuarios", "usuarios")
             # El de reportes lo dejamos como texto por ahora si no tienes la vista
             self._crear_btn("  Reportes", "reportes")
 

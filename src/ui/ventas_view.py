@@ -16,7 +16,6 @@ class VentasView(tk.Frame):
 
     def _init_ui(self):
         # Encabezado (Tu diseño original)
-        tk.Label(self, text="💰 Registro de Ventas", font=FONT_TITULO, bg=FONDO, fg=MORADO).pack(anchor="w", pady=(0, 10))
 
         # --- TABLA SUPERIOR (Como en tu imagen 1) ---
         cols = ("Sabor", "Cantidad", "Precio unit.", "Total", "Tipo", "Fecha")

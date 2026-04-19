@@ -22,7 +22,7 @@ class LoginView(tk.Frame):
         if self.logo_img:
             tk.Label(centro, image=self.logo_img, bg=BLANCO).pack(pady=(0, 10))
 
-        tk.Label(centro, text="🍧 LupitaSoft", font=("Georgia", 22, "bold italic"), 
+        tk.Label(centro, text="🍧 LupitaSoft", font=("Georgia", 25, "bold italic"), 
                  bg=BLANCO, fg=MORADO).pack(pady=(0, 20))
 
         # Campos de entrada
@@ -35,7 +35,7 @@ class LoginView(tk.Frame):
         self.ent_pass.pack(pady=(5, 25))
 
         # Botón con tu estilo original
-        tk.Button(centro, text="ENTRAR AL SISTEMA", command=self._intentar_login, 
+        tk.Button(centro, text="🚪ENTRAR AL SISTEMA", command=self._intentar_login, 
                   bg=TURQUESA, fg=BLANCO, font=("Arial", 11, "bold"),
                   relief="flat", cursor="hand2", padx=30, pady=10).pack()
 

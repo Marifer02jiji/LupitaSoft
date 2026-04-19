@@ -25,9 +25,9 @@ class UsuarioView(tk.Frame):
         frame_botones = tk.Frame(self, bg=FONDO)
         frame_botones.pack(fill="x", pady=20)
 
-        self._crear_btn(frame_botones, " Registrar Nuevo", TURQUESA, self._abrir_registro).pack(side="left", padx=5)
-        self._crear_btn(frame_botones, " Modificar", MORADO, self._abrir_edicion).pack(side="left", padx=5)
-        self._crear_btn(frame_botones, " Dar de Baja", "#e74c3c", self._eliminar).pack(side="left", padx=5)
+        self._crear_btn(frame_botones, "➕ Registrar Nuevo", TURQUESA, self._abrir_registro).pack(side="left", padx=5)
+        self._crear_btn(frame_botones, "✍️ Modificar", MORADO, self._abrir_edicion).pack(side="left", padx=5)
+        self._crear_btn(frame_botones, "🗑️ Dar de Baja", "#e74c3c", self._eliminar).pack(side="left", padx=5)
 
         self._cargar_datos()
 

@@ -10,10 +10,7 @@ class PedidosView(tk.Frame):
         self._init_ui()
 
     def _init_ui(self):
-        # Título con tipografía Georgia e itálica como tu diseño original
-        tk.Label(self, text=" Logística de Pedidos Especiales (Eventos)", 
-                 font=("Georgia", 16, "bold italic"), bg=FONDO, fg=MORADO).pack(anchor="w", pady=(0, 15))
-
+        
         # --- TABLA DE LOGÍSTICA (Diseño de Imagen 2) ---
         columnas = ("ID", "Cliente", "Teléfono", "Sabor/Cantidad", "Total", "Anticipo", "Entrega", "Estado")
         

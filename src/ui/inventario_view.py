@@ -10,9 +10,7 @@ class InventarioView(tk.Frame):
         self._init_ui()
 
     def _init_ui(self):
-        tk.Label(self, text="Gestión de Inventario", font=("Georgia", 18, "bold italic"),
-                 bg=FONDO, fg=MORADO).pack(anchor="w", padx=30, pady=20)
-
+        
         # --- SECCIÓN INSUMOS (Semáforo) ---
         tk.Label(self, text="Materia Prima (Insumos)", font=("Arial", 11, "bold"), bg=FONDO, fg=TEXTO_OSCURO).pack(anchor="w", padx=30)
         

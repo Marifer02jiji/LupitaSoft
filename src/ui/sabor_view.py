@@ -17,9 +17,7 @@ class SaborView(tk.Frame):
         self._init_ui()
 
     def _init_ui(self):
-        tk.Label(self, text="🍦 Catálogo de Sabores Visual", font=FONT_TITULO, 
-                 bg=FONDO, fg=MORADO).pack(anchor="w", pady=(0, 10))
-
+        
         # --- GALERÍA SUPERIOR ---
         galeria_frame = tk.LabelFrame(self, text=" Sabores en Vitrina ", font=("Arial", 10, "bold"),
                                      bg=FONDO, fg=MORADO, padx=10, pady=10)
@@ -53,7 +51,7 @@ class SaborView(tk.Frame):
         btns = tk.Frame(gestion_f, bg=FONDO)
         btns.pack(pady=5)
         self._crear_btn(btns, "➕ Nuevo", TURQUESA, self._abrir_crear).pack(side="left", padx=5)
-        self._crear_btn(btns, "📝 Editar", MORADO, self._abrir_editar).pack(side="left", padx=5)
+        self._crear_btn(btns, "✍️ Editar", MORADO, self._abrir_editar).pack(side="left", padx=5)
         # AQUÍ ES DONDE LLAMAMOS A LA FUNCIÓN QUE FALTABA
         self._crear_btn(btns, "🗑️ Desactivar", "#e74c3c", self._baja_logica).pack(side="left", padx=5)
 
