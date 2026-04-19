@@ -533,3 +533,14 @@ except ImportError:
 
 pantalla_dashboard()
 root.mainloop()
+
+
+
+
+
+
+
+
+
+
+
