@@ -138,7 +138,7 @@ class VentasView(tk.Frame):
             self.img_label.render = ImageTk.PhotoImage(img)
             self.img_label.config(image=self.img_label.render)
         except:
-            self.img_label.config(image="", text="🍦")
+            self.img_label.config(image="", text="🍧")
             
     def _cargar_imagen_sabor(self, nombre_archivo):
         
@@ -155,7 +155,7 @@ class VentasView(tk.Frame):
                 ruta_final = ruta_default
             else:
                 # Si ni siquiera existe default.png, usamos un placeholder vacío
-                self.lbl_imagen.config(image="", text="🍦\nLupita Helados")
+                self.lbl_imagen.config(image="", text="\nLupita Helados")
                 return
 
             # 3. Procesamiento con Pillow
@@ -167,4 +167,4 @@ class VentasView(tk.Frame):
 
         except Exception as e:
             print(f"Error crítico cargando imagen: {e}")
-            self.lbl_imagen.config(image="", text="❌\nError UI")
+            self.lbl_imagen.config(image="", text="\nError UI")

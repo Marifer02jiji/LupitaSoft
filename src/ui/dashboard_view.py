@@ -15,7 +15,7 @@ class DashboardView(tk.Frame):
 
     def _init_ui(self):
         # Título estilo Georgia original
-        tk.Label(self, text="📊 Dashboard Informativo", font=("Georgia", 18, "bold italic"),
+        tk.Label(self, text="Dashboard Informativo", font=("Georgia", 18, "bold italic"),
                  bg=FONDO, fg=MORADO).pack(anchor="w", padx=30, pady=30)
 
         # 1. CONSULTAS A LA BASE DE DATOS

@@ -16,7 +16,6 @@ SIDEBAR_BTN     = "#e0d0f5"
 VERDE     = "#7fef57"
 VERDE_CLARO = "#CAFFCB"
 
-# FUENTES ORIGINALES
 FONT_TITULO = ("Georgia", 15, "bold italic")
 FONT_SUB    = ("Georgia", 12, "bold italic")
 FONT_NORMAL = ("Arial", 10)

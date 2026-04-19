@@ -14,24 +14,24 @@ class RecetaView(tk.Frame):
             self._init_ui()
         else:
             messagebox.showerror("Error", "Código incorrecto. Acceso denegado.")
-            tk.Label(self, text="🔒 Acceso Restringido", font=FONT_TITULO, bg=FONDO).pack(expand=True)
+            tk.Label(self, text=" Acceso Restringido", font=FONT_TITULO, bg=FONDO).pack(expand=True)
 
     def _init_ui(self):
         # ENCABEZADO TURQUESA (Diseño Imagen 3)
         header = tk.Frame(self, bg=TURQUESA_CLARO, highlightbackground=TURQUESA, highlightthickness=1)
         header.pack(fill="x", pady=(0, 20))
         
-        tk.Label(header, text="👨‍🍳 Panel de Producción", font=FONT_TITULO, 
+        tk.Label(header, text=" Panel de Producción", font=FONT_TITULO, 
                  bg=TURQUESA_CLARO, fg=TURQUESA).pack(side="left", padx=20, pady=15)
 
         # --- SECCIÓN RECETAS ---
-        tk.Label(self, text="📖 Recetario Maestro", font=FONT_SUB, bg=FONDO, fg=MORADO).pack(anchor="w")
+        tk.Label(self, text=" Recetario Maestro", font=FONT_SUB, bg=FONDO, fg=MORADO).pack(anchor="w")
         self.tabla_recetas = ttk.Treeview(self, columns=("Sabor", "Base", "Rendimiento"), show="headings", height=5)
         self.tabla_recetas.heading("Sabor", text="Sabor"); self.tabla_recetas.heading("Base", text="Base"); self.tabla_recetas.heading("Rendimiento", text="Rendimiento")
         self.tabla_recetas.pack(fill="x", pady=(5, 20))
 
         # --- SECCIÓN INVENTARIO (SEMÁFORO) ---
-        tk.Label(self, text="📦 Estado de Insumos", font=FONT_SUB, bg=FONDO, fg=MORADO).pack(anchor="w")
+        tk.Label(self, text=" Estado de Insumos", font=FONT_SUB, bg=FONDO, fg=MORADO).pack(anchor="w")
         self.tabla_inv = ttk.Treeview(self, columns=("Insumo", "Stock", "Estado"), show="headings", height=8)
         self.tabla_inv.heading("Insumo", text="Insumo"); self.tabla_inv.heading("Stock", text="Cantidad"); self.tabla_inv.heading("Estado", text="Estado")
         self.tabla_inv.pack(fill="x", pady=5)

@@ -10,10 +10,7 @@ class UsuarioView(tk.Frame):
         self._init_ui()
 
     def _init_ui(self):
-        # Título estilo Georgia
-        tk.Label(self, text="👥 Gestión de Personal y Accesos", 
-                 font=FONT_TITULO, bg=FONDO, fg=MORADO).pack(anchor="w", pady=(0, 20))
-
+        
         # --- TABLA DE USUARIOS ---
         columnas = ("ID", "Código/Usuario", "Rol", "Nombre Completo")
         self.tabla = ttk.Treeview(self, columns=columnas, show="headings", height=10)
@@ -28,9 +25,9 @@ class UsuarioView(tk.Frame):
         frame_botones = tk.Frame(self, bg=FONDO)
         frame_botones.pack(fill="x", pady=20)
 
-        self._crear_btn(frame_botones, "➕ Registrar Nuevo", TURQUESA, self._abrir_registro).pack(side="left", padx=5)
-        self._crear_btn(frame_botones, "📝 Modificar", MORADO, self._abrir_edicion).pack(side="left", padx=5)
-        self._crear_btn(frame_botones, "🗑️ Dar de Baja", "#e74c3c", self._eliminar).pack(side="left", padx=5)
+        self._crear_btn(frame_botones, " Registrar Nuevo", TURQUESA, self._abrir_registro).pack(side="left", padx=5)
+        self._crear_btn(frame_botones, " Modificar", MORADO, self._abrir_edicion).pack(side="left", padx=5)
+        self._crear_btn(frame_botones, " Dar de Baja", "#e74c3c", self._eliminar).pack(side="left", padx=5)
 
         self._cargar_datos()
 
@@ -70,7 +67,7 @@ class UsuarioView(tk.Frame):
         v.configure(bg=MORADO_CLARO)
         v.grab_set()
 
-        texto_titulo = "📝 REGISTRAR NUEVO" if modo == "crear" else "📝 EDITAR PERSONAL"
+        texto_titulo = " REGISTRAR NUEVO" if modo == "crear" else " EDITAR PERSONAL"
         tk.Label(v, text=texto_titulo, font=("Georgia", 12, "bold italic"), 
                  bg=MORADO_CLARO, fg=MORADO).pack(pady=15)
 
@@ -124,7 +121,7 @@ class UsuarioView(tk.Frame):
             else:
                 messagebox.showerror("Error", "No se pudo completar la acción.")
 
-        btn_txt = "✅ REGISTRAR" if modo == "crear" else "💾 ACTUALIZAR"
+        btn_txt = "REGISTRAR" if modo == "crear" else "ACTUALIZAR"
         btn_col = TURQUESA if modo == "crear" else MORADO
         tk.Button(v, text=btn_txt, bg=btn_col, fg=BLANCO, font=("Arial", 10, "bold"),
                   padx=20, pady=12, command=ejecutar_guardado).pack(pady=30)

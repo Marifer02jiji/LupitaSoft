@@ -42,7 +42,7 @@ class LupitaSoftApp(tk.Tk):
         self.mostrar_login()
 
     def _cargar_logo(self):
-        """Carga el logo oficial desde la web como en tu diseño original"""
+
         try:
             url = "https://media.base44.com/images/public/69e1a68f901a409e0d030b63/f5ef7e54d_image.png"
             req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
@@ -59,7 +59,6 @@ class LupitaSoftApp(tk.Tk):
         if self.frame_actual: 
             self.frame_actual.destroy()
         
-        # Le pasamos el logo cargado para que se vea en el login
         self.frame_actual = LoginView(self, self.entrar_al_sistema, self.logo_img)
         self.frame_actual.pack(fill="both", expand=True)
 
@@ -105,23 +104,19 @@ class LupitaSoftApp(tk.Tk):
         self.cambiar_seccion("dashboard")
 
     def cambiar_seccion(self, seccion):
-        """
-        Controlador de navegación: Limpia el área de contenido y 
-        despliega la vista seleccionada con sus parámetros correctos.
-        """
         # 1. Limpiar lo que haya en la vista actual
         for w in self.vista_activa.winfo_children(): 
             w.destroy()
 
         # 2. Diccionario de Títulos (Para actualizar el Topbar de tu diseño original)
         titulos = {
-            "dashboard": "📊  Dashboard Principal",
-            "inventario": "📦  Control de Inventario",
-            "ventas": "💰  Punto de Venta",
-            "sabores": "🍦  Catálogo de los 72 Sabores",
-            "recetas": "👨‍🍳  Panel de Producción (Cocina)",
-            "usuarios": "👥  Gestión de Personal y Accesos",
-            "pedidos": "🛒  Logística de Pedidos (Eventos)"
+            "dashboard": "  Dashboard Principal",
+            "inventario": "  Control de Inventario",
+            "ventas": "  Punto de Venta",
+            "sabores": "  Catálogo de los 72 Sabores",
+            "recetas": "  Panel de Producción (Cocina)",
+            "usuarios": "  Gestión de Personal y Accesos",
+            "pedidos": "  Logística de Pedidos (Eventos)"
         }
 
         # Actualizar el título en el Topbar
@@ -140,8 +135,10 @@ class LupitaSoftApp(tk.Tk):
                 VentasView(self.vista_activa, self.usuario_id).pack(fill="both", expand=True)
 
             elif seccion == "sabores":
+                self.titulo_var.set(" Catálogo de Sabores")
+                from src.ui.sabor_view import SaborView
                 SaborView(self.vista_activa).pack(fill="both", expand=True)
-
+                
             elif seccion == "recetas":
                 # Recuerda: Esta vista pedirá el código 'LUPITA1979' al iniciar
                 RecetaView(self.vista_activa).pack(fill="both", expand=True)

@@ -22,7 +22,7 @@ class LoginView(tk.Frame):
         if self.logo_img:
             tk.Label(centro, image=self.logo_img, bg=BLANCO).pack(pady=(0, 10))
 
-        tk.Label(centro, text="🍦 LupitaSoft", font=("Georgia", 22, "bold italic"), 
+        tk.Label(centro, text="🍧 LupitaSoft", font=("Georgia", 22, "bold italic"), 
                  bg=BLANCO, fg=MORADO).pack(pady=(0, 20))
 
         # Campos de entrada

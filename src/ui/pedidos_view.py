@@ -11,7 +11,7 @@ class PedidosView(tk.Frame):
 
     def _init_ui(self):
         # Título con tipografía Georgia e itálica como tu diseño original
-        tk.Label(self, text="🛒 Logística de Pedidos Especiales (Eventos)", 
+        tk.Label(self, text=" Logística de Pedidos Especiales (Eventos)", 
                  font=("Georgia", 16, "bold italic"), bg=FONDO, fg=MORADO).pack(anchor="w", pady=(0, 15))
 
         # --- TABLA DE LOGÍSTICA (Diseño de Imagen 2) ---
@@ -34,14 +34,14 @@ class PedidosView(tk.Frame):
         btn_frame.pack(fill="x", pady=20)
 
         # Botones con tu estilo original (Turquesa y Morado)
-        self._btn(btn_frame, "✅ Marcar Entregado", TURQUESA).pack(side="left", padx=5)
-        self._btn(btn_frame, "📞 Contactar Cliente", MORADO).pack(side="left", padx=5)
-        self._btn(btn_frame, "🔄 Actualizar Lista", TURQUESA_MED).pack(side="right", padx=5)
+        self._btn(btn_frame, " Marcar Entregado", TURQUESA).pack(side="left", padx=5)
+        self._btn(btn_frame, " Contactar Cliente", MORADO).pack(side="left", padx=5)
+        self._btn(btn_frame, " Actualizar Lista", TURQUESA_MED).pack(side="right", padx=5)
 
         # --- PIE DE PÁGINA (Amarillo Pastel de tu imagen 2) ---
         footer = tk.Frame(self, bg=AMARILLO_PASTEL, highlightthickness=1, highlightbackground="#f0d080")
         footer.pack(fill="x", pady=(10, 0))
-        tk.Label(footer, text="📌 Los pedidos en 'Pendiente' con fecha de hoy aparecen resaltados.", 
+        tk.Label(footer, text=" Los pedidos en 'Pendiente' con fecha de hoy aparecen resaltados.", 
                  bg=AMARILLO_PASTEL, font=("Arial", 9, "italic")).pack(pady=8)
 
         self.cargar_datos()

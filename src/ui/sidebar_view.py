@@ -16,7 +16,7 @@ class SidebarView(tk.Frame):
         if self.logo_img:
             tk.Label(self, image=self.logo_img, bg=SIDEBAR_BG).pack(pady=(20, 5))
         else:
-            tk.Label(self, text="🍦", font=("Arial", 45), bg=SIDEBAR_BG, fg=TURQUESA).pack(pady=(20, 5))
+            tk.Label(self, text="🍧", font=("Arial", 45), bg=SIDEBAR_BG, fg=TURQUESA).pack(pady=(20, 5))
             
         tk.Label(self, text="LupitaSoft", font=("Georgia", 14, "bold italic"), 
                  bg=SIDEBAR_BG, fg=MORADO).pack()
@@ -25,25 +25,24 @@ class SidebarView(tk.Frame):
         tk.Frame(self, bg=MORADO_MED, height=1).pack(fill="x", padx=20, pady=15)
 
         # 2. SECCIONES GENERALES
-        self._crear_boton("📊  Dashboard", "dashboard")
-        self._crear_boton("📦  Inventario", "inventario")
-        self._crear_boton("💰  Ventas", "ventas")
-        self._crear_boton("🍦  Catálogo Sabores", "sabores")
-
+        self._crear_btn("  Dashboard", "dashboard")
+        self._crear_btn("  Inventario", "inventario")
+        self._crear_btn("  Ventas", "ventas")
+        self._crear_btn(" Catálogo", "sabores")
         # 3. SECCIONES DE GERENCIA (Solo para Admin / HLA01)
         if self.rol == "Admin":
             tk.Label(self, text="GERENCIA", font=("Arial", 7, "bold"), 
                      bg=SIDEBAR_BG, fg=TEXTO_GRIS).pack(anchor="w", padx=20, pady=(15, 0))
-            self._crear_boton("👥  Usuarios", "usuarios")
+            self._crear_btn("  Usuarios", "usuarios")
             # El de reportes lo dejamos como texto por ahora si no tienes la vista
-            self._crear_boton("📈  Reportes", "reportes")
+            self._crear_btn("  Reportes", "reportes")
 
         # 4. SECCIÓN COCINA
         tk.Label(self, text="PRODUCCIÓN", font=("Arial", 7, "bold"), 
                  bg=SIDEBAR_BG, fg=TEXTO_GRIS).pack(anchor="w", padx=20, pady=(15, 0))
-        self._crear_boton("👨‍🍳  Vista Cocinero", "recetas")
-        self._crear_boton("🛒  Pedidos Eventos", "pedidos")
-    def _crear_boton(self, texto, comando):
+        self._crear_btn("  Vista Cocinero", "recetas")
+        self._crear_btn("  Pedidos Eventos", "pedidos")
+    def _crear_btn(self, texto, comando):
         """Crea botones con el estilo lila de tu diseño original"""
         btn = tk.Button(self, text=texto, bg=SIDEBAR_BTN, fg=TEXTO_OSCURO,
                         font=("Arial", 10), relief="flat", cursor="hand2",
